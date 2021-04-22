@@ -15,6 +15,7 @@ exports.sortDependencies = function sortDependencies(data) {
     'package.json'
   )
   const packageJson = JSON.parse(fs.readFileSync(packageJsonFile))
+
   packageJson.devDependencies = sortObject(packageJson.devDependencies)
   packageJson.dependencies = sortObject(packageJson.dependencies)
   fs.writeFileSync(packageJsonFile, JSON.stringify(packageJson, null, 2) + '\n')
@@ -136,6 +137,7 @@ function runCommand(cmd, args, options) {
 
 function sortObject(object) {
   // Based on https://github.com/yarnpkg/yarn/blob/v1.3.2/src/config.js#L79-L85
+  object = object || {}
   const sortedObject = {}
   Object.keys(object)
     .sort()
