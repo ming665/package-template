@@ -11,20 +11,20 @@
     {{#jest}}"browser": "serve",
     "test": "yarn build && jest test",{{/jest}}
     "prepublish": "yarn build",
-    "release": "{{#git}}standard-version && {{/git}}yarn build && npm publish"
+    "release": "{{#if git}}standard-version && {{/if}}yarn build && npm publish"
   },
   "files": [
     "src",
     "dist"
   ],
-  {{# git}}"repository": {
+  {{#if git}}"repository": {
     "type": "git",
     "url": "{{ git }}"
   },
   "bugs": {
     "url": "https://github.com/{{ git }}/issues"
   },
-  "homepage": "https://github.com/{{ git }}#readme",{{/git}}
+  "homepage": "https://github.com/{{ git }}#readme",{{/if}}
   "author": "{{ author }}",
   "license": "{{ license }}",
   "dependencies": {
