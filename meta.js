@@ -58,17 +58,17 @@ module.exports = {
     },
     gitRepository: {
       when: 'isNotTest && git',
-      type: 'confirm',
+      type: 'string',
       message: 'Git repository',
     },
     keywords: {
       when: 'isNotTest',
-      type: 'confirm',
+      type: 'string',
       message: 'Keywords',
     },
     license: {
        when: 'isNotTest',
-        type: 'confirm',
+        type: 'string',
         message: 'License',
         default: 'ISC',
     },
