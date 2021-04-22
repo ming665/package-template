@@ -19,7 +19,7 @@
   ],
   {{#git}}"repository": {
     "type": "git",
-    "url": "{{# gitRepository }}"
+    "url": "{{ gitRepository }}"
   },{{/git}}
   {{#git}}"bugs": {
     "url": "https://github.com/ming665/logger/issues"
