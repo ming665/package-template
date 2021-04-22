@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rimraf dist && yarn build:node && yarn build:browser",
     "build:node": "cross-env NODE_ENV=node && bili src/{{ name }}.js --file-name {{ name }}.js --format cjs --bundle-node-modules --minify --no-map",
-    "build:browser": "cross-env NODE_ENV=browser && bili src/{{ name }}.js --file-name {{ name }}.browser.js --format umd --module-name logger --bundle-node-modules --minify --no-map",
+    "build:browser": "cross-env NODE_ENV=browser && bili src/{{ name }}.js --file-name {{ name }}.browser.js --format umd --module-name {{ name }} --bundle-node-modules --minify --no-map",
     {{#jest}}"browser": "serve",
     "test": "yarn build && jest test",{{/jest}}
     "prepublish": "yarn build"{{#git}},
@@ -22,9 +22,9 @@
     "url": "{{ gitRepository }}"
   },
   "bugs": {
-    "url": "https://github.com/{{ author }}/logger/issues"
+    "url": "https://github.com/{{ author }}/{{ name }}/issues"
   },
-  "homepage": "https://github.com/{{ author }}/logger#readme"{{/git}}
+  "homepage": "https://github.com/{{ author }}/{{ name }}#readme",{{/git}}
   "author": "{{ author }}",
   "license": "{{ license }}",
   "devDependencies": {
