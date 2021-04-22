@@ -10,21 +10,21 @@
     "build:browser": "cross-env NODE_ENV=browser && bili src/{{ name }}.js --file-name {{ name }}.browser.js --format umd --module-name {{ name }} --bundle-node-modules --minify --no-map",
     {{#jest}}"browser": "serve",
     "test": "yarn build && jest test",{{/jest}}
-    "prepublish": "yarn build"{{#git}},
-    "release": "standard-version && yarn build && npm publish"{{/git}}
+    "prepublish": "yarn build",
+    "release": "{{#git}}standard-version && {{/git}}yarn build && npm publish"
   },
   "files": [
     "src",
     "dist"
   ],
-  {{#git}}"repository": {
+  {{# git}}"repository": {
     "type": "git",
-    "url": "{{ gitRepository }}"
+    "url": "{{ git }}"
   },
   "bugs": {
-    "url": "https://github.com/{{ author }}/{{ name }}/issues"
+    "url": "https://github.com/{{ git }}/issues"
   },
-  "homepage": "https://github.com/{{ author }}/{{ name }}#readme",{{/git}}
+  "homepage": "https://github.com/{{ git }}#readme",{{/git}}
   "author": "{{ author }}",
   "license": "{{ license }}",
   "dependencies": {

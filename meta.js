@@ -53,11 +53,6 @@ module.exports = {
     },
     git: {
       when: 'isNotTest',
-      type: 'confirm',
-      message: 'Use git?',
-    },
-    gitRepository: {
-      when: 'isNotTest && git',
       type: 'string',
       message: 'Git repository',
     },
