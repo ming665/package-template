@@ -27,6 +27,8 @@
   "homepage": "https://github.com/{{ author }}/{{ name }}#readme",{{/git}}
   "author": "{{ author }}",
   "license": "{{ license }}",
+  "dependencies": {
+  },
   "devDependencies": {
     {{#jest}}"@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
