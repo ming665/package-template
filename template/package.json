@@ -20,10 +20,11 @@
   {{#git}}"repository": {
     "type": "git",
     "url": "{{ gitRepository }}"
-  },{{/git}}
-  {{#git}}"bugs": {
-    "url": "https://github.com/ming665/logger/issues"
   },
+  "bugs": {
+    "url": "https://github.com/{{ author }}/logger/issues"
+  },
+  "homepage": "https://github.com/{{ author }}/logger#readme"{{/git}}
   "author": "{{ author }}",
   "license": "{{ license }}",
   "devDependencies": {
@@ -35,7 +36,7 @@
     {{#jest}}"jest": "^26.6.3",{{#jest}}
     "rimraf": "^3.0.2"{{#jest}},
     "serve": "^11.3.2",
-    "standard-version": "^9.2.0"{{#jest}}
+    "standard-version": "^9.2.0"{{/jest}}
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
