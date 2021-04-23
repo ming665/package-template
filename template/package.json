@@ -1,13 +1,13 @@
 {
-  "name": "@xhs/{{ name }}",
+  "name": "{{ name }}",
   "version": "1.0.0",
   "description": "{{ description }}",
-  "main": "dist/{{ name }}.js",
-  "browser": "dist/{{ name }}.browser.js",
+  "main": "dist/index.js",
+  "browser": "dist/index.browser.js",
   "scripts": {
     "build": "rimraf dist && yarn build:node && yarn build:browser",
-    "build:node": "cross-env NODE_ENV=node && bili src/{{ name }}.js --file-name {{ name }}.js --format cjs --bundle-node-modules --minify --no-map",
-    "build:browser": "cross-env NODE_ENV=browser && bili src/{{ name }}.js --file-name {{ name }}.browser.js --format umd --module-name {{ name }} --bundle-node-modules --minify --no-map",
+    "build:node": "cross-env NODE_ENV=node && bili src/index.js --file-name index.js --format cjs --bundle-node-modules --minify --no-map",
+    "build:browser": "cross-env NODE_ENV=browser && bili src/index.js --file-name index.browser.js --format umd --module-name index --bundle-node-modules --minify --no-map",
     {{#jest}}"browser": "serve",
     "test": "yarn build && jest test",{{/jest}}
     "prepublish": "yarn build",
