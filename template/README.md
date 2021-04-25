@@ -1,4 +1,4 @@
-# @xhs/{{name}}
+# {{name}}
 
 ## release version and publish
 ```
